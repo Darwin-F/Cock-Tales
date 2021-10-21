@@ -10,6 +10,7 @@ export class CocktailsComponent implements OnInit {
 
   constructor() { }
   cocktails = COCKTAILS;
+  displayedColumns: string[] = ['name', 'glass', 'category','garnish','ingredients'];
   ngOnInit(): void {
   }
 

@@ -1,10 +1,45 @@
-<div fxLayout="row" fxLayout.xs="column">
-    <div fxFlexAlign="center">
-        <mat-list *ngFor="let cocktail of cocktails">
+<div fxLayout="row" fxLayoutAlign="center center">
+        <!-- <mat-list *ngFor="let cocktail of cocktails">
             <mat-list-item>{{cocktail.name}}</mat-list-item>
             <mat-divider></mat-divider>
-        </mat-list>
-    </div>
-    
+        </mat-list> -->
+        <table mat-table [dataSource]="cocktails" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="glass">
+              <th mat-header-cell *matHeaderCellDef> Glass </th>
+              <td mat-cell *matCellDef="let element"> {{element.glass}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="category">
+              <th mat-header-cell *matHeaderCellDef> Category </th>
+              <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="garnish">
+              <th mat-header-cell *matHeaderCellDef> Garnish </th>
+              <td mat-cell *matCellDef="let element"> {{element.garnish}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ingredients">
+                <th mat-header-cell *matHeaderCellDef> Ingredients </th>
+                <td mat-cell *matCellDef="let element"> <span *ngFor="let ingredient of element.ingredients"> {{ingredient.ingredient}} </span> </td>
+            </ng-container>
+
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> 
 </div>
 

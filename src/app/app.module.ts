@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CocktailsComponent } from './cocktails/cocktails.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatListModule,
+    MatTableModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
